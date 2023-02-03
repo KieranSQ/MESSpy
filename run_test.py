@@ -14,7 +14,7 @@ PRE PROCESSING
 # Import modules
 from rec import REC
 from economics import NPV
-import postprocess_test as pp
+# import postprocess_test as pp
 import preprocess_test as pre
 #import postprocess_dev as pp
 #import preprocess_dev as pre
@@ -72,37 +72,37 @@ NPV(structure,structure0,study_case,reference_case,economic_data,general['simula
 POST PROCESS - PLOTTING
 ================================
 
-some post-process are alredy avaiable as examples in postprocess_test
-you should create your own postprocess_dev.py
-"""
+# some post-process are alredy avaiable as examples in postprocess_test
+# you should create your own postprocess_dev.py
+# """
 
-pp.total_balances(study_case,'prosumer_1','electricity')
-pp.total_balances(study_case,'prosumer_2','electricity')
-pp.total_balances(study_case,'prosumer_2','hydrogen')
-pp.total_balances(study_case,'consumer_1','electricity')
+# pp.total_balances(study_case,'prosumer_1','electricity')
+# pp.total_balances(study_case,'prosumer_2','electricity')
+# pp.total_balances(study_case,'prosumer_2','hydrogen')
+# pp.total_balances(study_case,'consumer_1','electricity')
 
-#pp.total_balances(reference_case,'consumer_2','electricity')
-#pp.total_balances(reference_case,'consumer_2','heating water')
-#pp.total_balances(reference_case,'consumer_2','gas')
-pp.total_balances(study_case,'consumer_2','electricity')
-pp.total_balances(study_case,'consumer_2','heating water')
+# #pp.total_balances(reference_case,'consumer_2','electricity')
+# #pp.total_balances(reference_case,'consumer_2','heating water')
+# #pp.total_balances(reference_case,'consumer_2','gas')
+# pp.total_balances(study_case,'consumer_2','electricity')
+# pp.total_balances(study_case,'consumer_2','heating water')
 
 
-pp.REC_electricity_balance(study_case)
+# pp.REC_electricity_balance(study_case)
 
-pp.LOC_plot(study_case)
+# pp.LOC_plot(study_case)
 
-pp.NPV_plot(study_case)
+# pp.NPV_plot(study_case)
 
-pp.hourly_balances_electricity(study_case,'prosumer_1', 2, 3)
-pp.hourly_balances_electricity(study_case,'prosumer_2', 2, 3)
-#pp.hourly_balances_electricity(study_case,'consumer_1', 2, 3)
-#pp.hourly_balances_electricity(study_case,'consumer_2', 2, 3)
+# pp.hourly_balances_electricity(study_case,'prosumer_1', 2, 3)
+# pp.hourly_balances_electricity(study_case,'prosumer_2', 2, 3)
+# #pp.hourly_balances_electricity(study_case,'consumer_1', 2, 3)
+# #pp.hourly_balances_electricity(study_case,'consumer_2', 2, 3)
 
-#pp.csc_allocation_sum(study_case)
-#pp.storage_control(study_case)
-#pp.ele_param(study_case, 2, 3)
-#pp.fc_param(study_case, 2, 3)
+# #pp.csc_allocation_sum(study_case)
+# #pp.storage_control(study_case)
+# #pp.ele_param(study_case, 2, 3)
+# #pp.fc_param(study_case, 2, 3)
 
 
 #%% ##########################################################################
