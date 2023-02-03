@@ -15,7 +15,7 @@ class electrolyzer:
         Create an electrolyzer object
     
         parameters : dictionary
-            'Npower': float nominal power [kW] - optional
+            'Npower': float nominal power [kW] 
             'stack model': str 'Enapter 2.1','McLyzer 800' are aviable or 'PEM General'
                       
         output : electrolyzer object able to:
@@ -491,7 +491,7 @@ class electrolyzer:
             'Water consumption' 
             
             watCons = hyd_vol*self.rhoNrh2*self.h2oMolMass/self.H2MolMass/etaElectr/self.rhoStdh2o     # [m^3] water used by the electrolyzer - volume calculated @ 15°C & Pamb           
-            
+
             hydrogen = hyd
             
         if hyd > storable_hydrogen:           # if there is not enough space in the H tank to store the hydrogen (H tank is nearly full)
@@ -502,7 +502,50 @@ class electrolyzer:
        
         return (hyd,e_absorbed,etaElectr,watCons,CellCurrDensity1,hydrogen)           
 
-           
+
+    def tech_cost(self,tech_cost):
+        """
+        Parameters
+        ----------
+        tech_cost : dict
+            'cost per unit': float [€/kW]
+            'OeM': float, percentage on initial investment [%]
+            'refud': dict
+                'rate': float, percentage of initial investment which will be rimbursed [%]
+                'years': int, years for reimbursment
+            'replacement': dict
+                'rate': float, replacement cost as a percentage of the initial investment [%]
+                'years': int, after how many years it will be replaced
+
+        Returns
+        -------
+        self.cost: dict
+            'total cost': float [€]
+            'OeM': float, percentage on initial investment [%]
+            'refud': dict
+                'rate': float, percentage of initial investment which will be rimbursed [%]
+                'years': int, years for reimbursment
+            'replacement': dict
+                'rate': float, replacement cost as a percentage of the initial investment [%]
+                'years': int, after how many years it will be replaced
+        """
+        tech_cost = {key: value for key, value in tech_cost.items()}
+
+        size = self.Npower * self.n_modules
+        
+        if tech_cost['cost per unit'] == 'default price correlation':
+            C0 = 1500 # €/kW
+            scale_factor = 0.8 # 0:1
+            C = size * C0 **  scale_factor
+        else:
+            C = size * tech_cost['cost per unit']
+
+        tech_cost['total cost'] = tech_cost.pop('cost per unit')
+        tech_cost['total cost'] = C
+        tech_cost['OeM'] = tech_cost['OeM'] *C /100 # €
+
+        self.cost = tech_cost    
+
 ##########################################################################################
 
 if __name__ == "__main__":

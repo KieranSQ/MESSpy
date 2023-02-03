@@ -4,9 +4,15 @@
 				"PV": 	{	"tilt": 0,
 							"azimuth": 30,
 							"losses": 20,
+<<<<<<< HEAD:input_test/structure.json
 							"Max field width": 10.7,
 							"Max field length": 23,
 							"peakP": 45,
+=======
+							"Max field width": 40,
+							"Max field length": 30,
+							"peakP": 5,
+>>>>>>> main:input_test/studycase.json
 							"serie": "TMY"},
 				"inverter":{"max efficiency": 0.95,
             				"peakP": 3,
@@ -25,8 +31,6 @@
 				"PV": {		"tilt": 30,
 							"azimuth": 10,
 							"losses": 10,
-    						"Max field width": 4,
-							"Max field length": 5,
 							"peakP": 3,
 							"serie": "TMY"},	
      			"inverter":{"max efficiency": 0.95,
@@ -37,7 +41,8 @@
 									"stack model": "PEM General"},
 				"fuel cell": {	"Npower": 1,
 								"number of modules":1,
-								"stack model": "PEM General"},
+								"stack model": "PEM General",
+								"ageing" : false},
 				"H tank": {		"max capacity": 1,
 								"pressure": 30 }},
 							
@@ -49,10 +54,8 @@
                 "grid": {   "electricity": true},
                 
                 "heatpump": {  "type":1,
-                               "usage": 2,
                                "nom Pth": 8,
                                "t rad heat": 45,
-                               "t rad cool": 10,
                                "inertial TES volume": 200, 
                                "inertial TES dispersion": 0.36, 
                                "PV surplus": false,
