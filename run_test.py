@@ -82,7 +82,7 @@ POST PROCESS - PLOTTING
 # you should create your own postprocess_dev.py
 # """
 
-<<<<<<< HEAD
+#<<<<<<< HEAD
 # pp.total_balances(study_case,'prosumer_1','electricity')
 # pp.total_balances(study_case,'prosumer_2','electricity')
 # pp.total_balances(study_case,'prosumer_2','hydrogen')
@@ -93,7 +93,7 @@ POST PROCESS - PLOTTING
 # #pp.total_balances(reference_case,'consumer_2','gas')
 # pp.total_balances(study_case,'consumer_2','electricity')
 # pp.total_balances(study_case,'consumer_2','heating water')
-=======
+#=======
 pp.total_balances(name_studycase,'prosumer_1','electricity')
 pp.total_balances(name_studycase,'prosumer_2','electricity')
 pp.total_balances(name_studycase,'prosumer_2','hydrogen')
@@ -104,11 +104,11 @@ pp.total_balances(name_studycase,'consumer_1','electricity')
 #pp.total_balances(name_refcase,'consumer_2','gas')
 pp.total_balances(name_studycase,'consumer_2','electricity')
 pp.total_balances(name_studycase,'consumer_2','heating water')
->>>>>>> main
+#>>>>>>> main
 
 pp.REC_electricity_balance(name_studycase)
 
-<<<<<<< HEAD
+#<<<<<<< HEAD
 # pp.REC_electricity_balance(study_case)
 
 # pp.LOC_plot(study_case)
